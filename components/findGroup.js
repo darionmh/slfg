@@ -19,15 +19,17 @@ export default function FindGroup({ activeGame }) {
             .where('platform', '==', platform)
             .where('region', '==', region)
             .where('language', '==', language)
-            .where('beginnerAllowed', '==', beginnerAllowed)
-            .where('averageAllowed', '==', averageAllowed)
-            .where('expertAllowed', '==', expertAllowed);
 
         if (activeGame && activeGame !== '') {
             groups = groups.where('game', '==', activeGame)
         }
 
-        groups.orderBy('timestamp', 'desc').get().then((res) => setGroups(res.docs.map(d => d.data())));
+        groups.orderBy('timestamp', 'desc').get().then((res) => setGroups(res.docs.map(d => d.data()).filter(g => {
+            if(beginnerAllowed && g.beginnerAllowed) return true;
+            if(averageAllowed && g.averageAllowed) return true;
+            if(expertAllowed && g.expertAllowed) return true;
+            return false;
+        })));
     }
 
     return (
