@@ -12,6 +12,8 @@ export default function GameList({activeGame, setActiveGame}) {
             { title: 'Crayta' },
             { title: 'Dead by Daylight' },
             { title: 'Destiny 2' },
+            { title: 'Far Cry 5' },
+            { title: 'Far Cry New Dawn' },
             { title: 'Farming Simulator' },
             { title: 'Get Packed' },
             { title: 'GRID' },
