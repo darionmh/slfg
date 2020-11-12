@@ -1,4 +1,5 @@
-import * as firebase from 'firebase/app';
+import firebase from 'firebase';
+import 'firebase/analytics';
 
 var firebaseConfig = {
     apiKey: "AIzaSyBaxq3oVeFBZjLqyeELc8RGZd0ObsUCsv4",
@@ -11,7 +12,7 @@ var firebaseConfig = {
     measurementId: "G-466HMLTWMR"
 };
 
-if (!firebase.apps.length) {
+if (typeof window !== 'undefined' && !firebase.apps.length) {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics()
