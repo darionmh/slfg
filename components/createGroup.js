@@ -16,6 +16,7 @@ export default function CreateGroup({ activeGame }) {
 
     const [show, setShow] = useState(false);
     const [posting, setPosting] = useState(false);
+    const [posted, setPosted] = useState(false);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -23,7 +24,7 @@ export default function CreateGroup({ activeGame }) {
         setTimeout(() => {
             firebase.firestore().collection('groups').add({
                 game: activeGame, platform, region, language, beginnerAllowed, averageAllowed, expertAllowed, username, description, timestamp: moment().toISOString(), password
-            }).finally(() => setShow(true), setPosting(false));
+            }).finally(() => setShow(true), setPosting(false), setPosted(true), setTimeout(() => setPosted(false), 5000));
         }, 500);
     }
 
@@ -93,7 +94,7 @@ export default function CreateGroup({ activeGame }) {
                     <Form.Label>Password (needed to close or edit the group later)</Form.Label>
                     <Form.Control required type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
                 </Form.Group>
-                <Button block type="submit" disabled={posting || !activeGame}>{posting ? 'Posting...' : 'Post Request'}</Button>
+                <Button block type="submit" disabled={posting || !activeGame}>{posting ? 'Posting...' : posted ? 'Posted!' : 'Post Request'}</Button>
             </Form>
         </div>
     )
