@@ -1,0 +1,43 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  transition: all 0.25s;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: lightgray;
+  }
+
+  &.card--active {
+    background-color: lightgray;
+  }
+}
+
+.skill-level {
+  display: flex;
+
+  * {
+    flex: auto;
+    
+    &:nth-child(2) {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
+}
