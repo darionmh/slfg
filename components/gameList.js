@@ -28,7 +28,7 @@ export default function GameList({activeGame, setActiveGame}) {
     // });
 
     return (
-        <Container>
+        <Container className="game-list">
             <h2>What are we playing today?</h2>
             <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "space-between" }}>
                 {
