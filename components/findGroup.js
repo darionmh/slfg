@@ -27,7 +27,7 @@ export default function FindGroup({ activeGame }) {
             groups = groups.where('game', '==', activeGame)
         }
 
-        groups.get().then((res) => setGroups(res.docs.map(d => d.data())));
+        groups.orderBy('timestamp', 'desc').get().then((res) => setGroups(res.docs.map(d => d.data())));
     }
 
     return (
