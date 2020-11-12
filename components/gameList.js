@@ -11,7 +11,7 @@ export default function GameList({activeGame, setActiveGame}) {
             { title: 'Borderlands 3' },
             { title: 'Crayta' },
             { title: 'Dead by Daylight' },
-            { title: 'Destiny 3' },
+            { title: 'Destiny 2' },
             { title: 'Farming Simulator' },
             { title: 'Get Packed' },
             { title: 'GRID' },
