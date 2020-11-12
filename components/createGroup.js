@@ -29,9 +29,9 @@ export default function CreateGroup({ activeGame }) {
 
     return (
         <div>
-            <Toast onClose={() => setShow(false)} show={show} delay={3000} autohide style={{
+            <Toast onClose={() => setShow(false)} show={show} delay={10000} autohide style={{
                 position: 'fixed',
-                top: 10,
+                bottom: 10,
                 right: 10,
                 zIndex: 100
             }}>
