@@ -93,6 +93,9 @@ export default function CreateGroup({ activeGame }) {
                 <Form.Group>
                     <Form.Label>Password (needed to close or edit the group later)</Form.Label>
                     <Form.Control required type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <Form.Text className="text-muted">
+                        Please don't use anything important here. This field isn't super secure as these are just LFG posts.
+                    </Form.Text>
                 </Form.Group>
                 <Button block type="submit" disabled={posting || !activeGame}>{posting ? 'Posting...' : posted ? 'Posted!' : 'Post Request'}</Button>
             </Form>
